@@ -21,8 +21,8 @@ public class UserController {
     // rota que retorna as informações com base no id o user
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> findById(@PathVariable User userToCreate){
-        var user = userService.create(userToCreate);
+    public ResponseEntity<User> findById(Long id){
+        var user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
